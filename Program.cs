@@ -50,6 +50,7 @@
 
         static void Del()
         {
+            Console.WriteLine("Введите число: ");
             int chislo = Convert.ToInt32(Console.ReadLine());
             int del = 0;
             while (y <= x)
@@ -84,7 +85,6 @@
                 }
                 else if (dest == 3)
                 {
-                    Console.WriteLine("Введите число: ");
                     Del();
                 }
                 else if (dest == 4)
