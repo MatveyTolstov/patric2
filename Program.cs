@@ -1,11 +1,35 @@
-﻿namespace Пракитическая_работа_2
+namespace Пракитическая_работа_2
 {
     internal class Program
     {
 
         static void Main()
         {
-            Destviya();
+            while (true)
+            {
+                Console.WriteLine("1) Игра угадай число");
+                Console.WriteLine("2) Таблица умножения");
+                Console.WriteLine("3) Найти делители числа");
+                Console.WriteLine("4) Выйти из программы");
+                Console.WriteLine("Введите действие: ");
+                int dest = Convert.ToInt32(Console.ReadLine());
+                if (dest == 1)
+                {
+                    Ugaday();
+                }
+                else if (dest == 2)
+                {
+                    Tabl();
+                }
+                else if (dest == 3)
+                {
+                    Del();
+                }
+                else if (dest == 4)
+                {
+                    break;
+                }
+            }
         }
         static void Ugaday()
         {
@@ -37,15 +61,18 @@
         static void Tabl()
         {
             int[,] tab = new int[10, 10];
+
             for (int i = 1; i < tab.GetLength(0); i++)
             {
-                for (int j = 0; j < tab.GetLength(1); j++)
+                for (int j = 1; j < tab.GetLength(1); j++)
                 {
-                    Console.Write(i * j + "\t");
+                    tab[i, j] = i * j;
+                    Console.Write(tab[i, j] + "\t");
+                    
                 }
+                Console.WriteLine();
             }
-
-            Console.WriteLine();
+           
         }
 
         static void Del()
@@ -53,73 +80,16 @@
             Console.WriteLine("Введите число: ");
             int chislo = Convert.ToInt32(Console.ReadLine());
             int del = 0;
-            while (y <= x)
+            while (del <= chislo)
             {
-                y++;
+                del++;
                 if (chislo % del == 0)
                 {
-                    Console.Write(y + "\t");
+                    Console.Write(del + "\t");
                 }
 
             }
             Console.WriteLine();
         }
-
-        static void Destviya()
-        {
-            while (true)
-            {
-                Console.WriteLine("1) Игра угадай число");
-                Console.WriteLine("2) Таблица умножения");
-                Console.WriteLine("3) Найти делители числа");
-                Console.WriteLine("4) Выйти из программы");
-                Console.WriteLine("Введите действие: ");
-                int dest = Convert.ToInt32(Console.ReadLine());
-                if (dest == 1)
-                {
-                    Ugaday();
-                }
-                else if (dest == 2)
-                {
-                    Tabl();
-                }
-                else if (dest == 3)
-                {
-                    Del();
-                }
-                else if (dest == 4)
-                {
-                    break;
-                }
-            }
-        }
-
     }
 }
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                
